@@ -4,3 +4,6 @@ This is part of The Odin Project. I am beginning with the simple program of Rock
 
 
 Took me a while to get this done. Tried to include arrays to decide winning combination for player, but couldn't figure it out, so I went with simple stacked if and else ifs. Whatever, not sophisticated (yet!), but it works.
+
+
+After I read the instructions, I realized I needed to include returns in the functions. I kept the old code commented out at the bottom. I also used local variables only. I guess these are good JS practices.
