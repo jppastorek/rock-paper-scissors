@@ -1,28 +1,133 @@
-function computerPlay() {
-    const choices = ["rock", "paper", "scissors"]
-    return choices[Math.floor(Math.random() * 3)]
+let computerPlay = function() {
+    const choices = ["rock", "paper", "scissors"];
+    let computerSelection = choices[Math.floor(Math.random() * 3)];
+    return computerSelection;
+}
+
+function playRock() {
+    playerImage.src = "./images/rock.png";
+    let compChoice = computerPlay();
+    computerImage.src = `./images/${compChoice}.png`;
+    // let playerSelection = "rock";
+    // return playerSelection;
+}
+
+function playPaper() {
+    playerImage.src = "./images/paper.png";
+    let compChoice = computerPlay();
+    computerImage.src = `./images/${compChoice}.png`;
+    // let playerSelection = "paper";
+    // return playerSelection;
+}
+
+function playScissors() {
+    playerImage.src = "./images/scissors.png";
+    let compChoice = computerPlay();
+    computerImage.src = `./images/${compChoice}.png`;
+    // let playerSelection = "scissors";
+    // return playerSelection;
+}
+
+function setPlayerWinnerClass() {
+    if (!playerHand.classList.contains("winner")) {
+        playerHand.classList.add("winner");
+    }
+    if (computerHand.classList.contains("winner")) {
+        computerHand.classList.remove("winner");
+    }
+}
+
+function setComputerWinnerClass() {
+    if (!computerHand.classList.contains("winner")) {
+        computerHand.classList.add("winner");
+    }
+    if (playerHand.classList.contains("winner")) {
+        playerHand.classList.remove("winner");
+    }
+}
+
+function setTieClass() {
+    if (playerHand.classList.contains("winner")) {
+        playerHand.classList.remove("winner");
+    }
+    if (computerHand.classList.contains("winner")) {
+        computerHand.classList.remove("winner");
+    }
 }
 
 
 function playRound(playerSelection, computerSelection) {
     let winner;
+
     if (playerSelection === "rock" && computerSelection === "scissors") {
         winner = "Player";
+        resultText.innerText = 'You win! Play again?';
+        setPlayerWinnerClass();
     } else if (playerSelection === "paper" && computerSelection === "rock") {
         winner = "Player";
+        resultText.innerText = 'You win! Play again?';
+        setPlayerWinnerClass();
     } else if (playerSelection === "scissors" && computerSelection === "paper") {
         winner = "Player";
+        resultText.innerText = 'You win! Play again?';
+        setPlayerWinnerClass();
     } else if (playerSelection === "rock" && computerSelection === "paper") {
         winner = "Computer";
+        resultText.innerText = 'You lose! Play again?';
+        setComputerWinnerClass();
     } else if (playerSelection === "paper" && computerSelection === "scissors") {
         winner = "Computer";
+        resultText.innerText = 'You lose! Play again?';
+        setComputerWinnerClass();
     } else if (playerSelection === "scissors" && computerSelection === "rock") {
         winner = "Computer";
+        resultText.innerText = 'You lose! Play again?';
+        setComputerWinnerClass();
     } else {
-        winner = "No one"
+        winner = "No one";
+        resultText.innerText = "It's a tie! Play again?";
+        setTieClass();
     }
-    return winner;
+
+    // return winner;
 }
+
+
+const rockSelector = document.querySelector(".rock");
+const paperSelector = document.querySelector(".paper");
+const scissorsSelector = document.querySelector(".scissors");
+const playerImage = document.querySelector(".player-img");
+const computerImage = document.querySelector(".computer-img");
+const resultText = document.querySelector(".result-text");
+const playerHand = document.querySelector(".player-hand");
+const computerHand = document.querySelector(".computer-hand");
+
+
+
+rockSelector.addEventListener("click", function(e) {
+    let playerSelection = "rock";
+    let computerSelection = computerPlay();
+    computerImage.src = `./images/${computerSelection}.png`;
+    playerImage.src = "./images/rock.png";
+    playRound(playerSelection, computerSelection);
+});
+
+paperSelector.addEventListener("click", function(e) {
+    let playerSelection = "paper";
+    let computerSelection = computerPlay();
+    computerImage.src = `./images/${computerSelection}.png`;
+    playerImage.src = "./images/paper.png";
+    playRound(playerSelection, computerSelection);
+});
+
+scissorsSelector.addEventListener("click", function(e) {
+    let playerSelection = "scissors";
+    let computerSelection = computerPlay();
+    computerImage.src = `./images/${computerSelection}.png`;
+    playerImage.src = "./images/scissors.png";
+    playRound(playerSelection, computerSelection);
+});
+
 
 
 function game() {
@@ -51,7 +156,7 @@ function game() {
     return victor;
 }
 
-console.log(game());
+
 
 
 

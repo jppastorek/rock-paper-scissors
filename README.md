@@ -7,3 +7,7 @@ Took me a while to get this done. Tried to include arrays to decide winning comb
 
 
 After I read the instructions, I realized I needed to include returns in the functions. I kept the old code commented out at the bottom. I also used local variables only. I guess these are good JS practices.
+
+
+1/8/22
+I have added a UI to this project. I am still yet to add the functionality that keeps track of your game score and determines a winner based on the best of 5 games.

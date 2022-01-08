@@ -27,7 +27,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 20px;
+    gap: 50px;
 }
 
 .player-hand,
@@ -41,7 +41,10 @@ body {
     justify-content: center;
 }
 
-.img {
+.player-img,
+.computer-img,
+.player-box,
+.computer-box {
     width: 250px;
     height: 250px;
     /* border-style: solid;
@@ -55,11 +58,17 @@ body {
 .scissors {
     width: 100px;
     height: 100px;
-    border-style: solid;
-    border-width: 1px;
-    border-color: #fff1bd;
-    border-radius: 10px;
     padding: 10px;
+}
+
+.rock:hover,
+.paper:hover,
+.scissors:hover {
+    transform: scale(1.05, 1.05);
+    border-color: #a3da8d;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 10px;
 }
 
 .rock>img,
@@ -72,4 +81,11 @@ body {
 .img>img {
     width: 250px;
     height: 250px;
+}
+
+.winner {
+    border-style: solid;
+    border-width: 4px;
+    border-color: #a3da8d;
+    border-radius: 10px;
 }
