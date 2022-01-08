@@ -1,0 +1,48 @@
+/* Color palette
+background - #146356
+text - #a3da8d
+other - #fff1bd
+other - #f3c892 */
+
+body {
+    background-color: #146356;
+    color: #a3da8d;
+    font-family: 'Source Code Pro', sans-serif;
+}
+
+div {
+    border-style: solid;
+    border-width: 4px;
+    border-color: black;
+}
+
+.header {
+    color: #fff1bd;
+    text-align: center;
+}
+
+.game-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 8px;
+}
+
+.player-hand,
+.computer-hand,
+.result {
+    display: flex;
+    flex-direction: column;
+    /* margin: 5px auto; */
+    align-items: center;
+    justify-content: center;
+}
+
+.img {
+    width: 300px;
+    height: 300px;
+    border-style: solid;
+    border-width: 4px;
+    border-color: #f3c892;
+    border-radius: 10px;
+}
