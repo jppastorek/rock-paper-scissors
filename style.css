@@ -94,6 +94,18 @@ body {
     height: 250px;
 }
 
-.winner {
+.player-winner {
     border-color: #a3da8d;
 }
+
+.computer-winner {
+    border-color: #ff6363;
+}
+
+
+/* .choices {
+    border-style: solid;
+    border-left: black;
+    border-right: black;
+    border-radius: 10px;
+} */

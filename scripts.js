@@ -29,29 +29,29 @@ function playScissors() {
 }
 
 function setPlayerWinnerClass() {
-    if (!playerHand.classList.contains("winner")) {
-        playerHand.classList.add("winner");
+    if (!playerHand.classList.contains("player-winner")) {
+        playerHand.classList.add("player-winner");
     }
-    if (computerHand.classList.contains("winner")) {
-        computerHand.classList.remove("winner");
+    if (computerHand.classList.contains("computer-winner")) {
+        computerHand.classList.remove("computer-winner");
     }
 }
 
 function setComputerWinnerClass() {
-    if (!computerHand.classList.contains("winner")) {
-        computerHand.classList.add("winner");
+    if (!computerHand.classList.contains("computer-winner")) {
+        computerHand.classList.add("computer-winner");
     }
-    if (playerHand.classList.contains("winner")) {
-        playerHand.classList.remove("winner");
+    if (playerHand.classList.contains("player-winner")) {
+        playerHand.classList.remove("player-winner");
     }
 }
 
 function setTieClass() {
-    if (playerHand.classList.contains("winner")) {
-        playerHand.classList.remove("winner");
+    if (playerHand.classList.contains("player-winner")) {
+        playerHand.classList.remove("player-winner");
     }
-    if (computerHand.classList.contains("winner")) {
-        computerHand.classList.remove("winner");
+    if (computerHand.classList.contains("computer-winner")) {
+        computerHand.classList.remove("computer-winner");
     }
 }
 
