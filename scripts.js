@@ -34,19 +34,23 @@ function setTieClass() {
 
 
 function addPlayerScore() {
-    if (playerScore < 3) {
+    if (playerScore <= 2) {
         playerScore++;
-        resultText.innerText = `Player: ${playerScore} --- Computer: ${computerScore}`;
-    } else {
+        playerLabel.innerText = `Player: ${playerScore}`;
+        computerLabel.innerText = `Computer: ${computerScore}`;
+    }
+    if (playerScore === 3) {
         resultText.innerText = `You win! The score was ${playerScore} to ${computerScore}.`
     }
 }
 
 function addComputerScore() {
-    if (computerScore < 3) {
+    if (computerScore <= 2) {
         computerScore++;
-        resultText.innerText = `Player: ${playerScore} --- Computer: ${computerScore}`;
-    } else {
+        playerLabel.innerText = `Player: ${playerScore}`;
+        computerLabel.innerText = `Computer: ${computerScore}`;
+    }
+    if (computerScore === 3) {
         resultText.innerText = `You lose! The score was ${playerScore} to ${computerScore}.`
     }
 }
@@ -71,7 +75,7 @@ function playRound(playerSelection, computerSelection) {
         setComputerWinnerClass();
         addComputerScore();
     } else {
-        resultText.innerText = `It's a tie! Player: ${playerScore} --- Computer: ${computerScore}`;
+        resultText.innerText = `Choose your weapon...`;
         setTieClass();
     }
 
@@ -87,6 +91,9 @@ const computerImage = document.querySelector(".computer-img");
 const resultText = document.querySelector(".result-text");
 const playerHand = document.querySelector(".player-hand");
 const computerHand = document.querySelector(".computer-hand");
+const playerLabel = document.querySelector(".player-label");
+const computerLabel = document.querySelector(".computer-label");
+
 let playerScore = 0;
 let computerScore = 0;
 
