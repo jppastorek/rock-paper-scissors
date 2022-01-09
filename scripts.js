@@ -40,7 +40,11 @@ function addPlayerScore() {
         computerLabel.innerText = `Computer: ${computerScore}`;
     }
     if (playerScore === 3) {
-        resultText.innerText = `You win! The score was ${playerScore} to ${computerScore}.`
+        resultText.innerText = `You win! The score was ${playerScore} to ${computerScore}.`;
+        choices.style.display = "none";
+        btn.innerHTML = "Play again?";
+        btn.classList.add("btn");
+        choiceContainer.appendChild(btn);
     }
 }
 
@@ -51,7 +55,11 @@ function addComputerScore() {
         computerLabel.innerText = `Computer: ${computerScore}`;
     }
     if (computerScore === 3) {
-        resultText.innerText = `You lose! The score was ${playerScore} to ${computerScore}.`
+        resultText.innerText = `You lose! The score was ${playerScore} to ${computerScore}.`;
+        choices.style.display = "none";
+        btn.innerHTML = "Play again?";
+        btn.classList.add("btn");
+        choiceContainer.appendChild(btn);
     }
 }
 
@@ -93,6 +101,11 @@ const playerHand = document.querySelector(".player-hand");
 const computerHand = document.querySelector(".computer-hand");
 const playerLabel = document.querySelector(".player-label");
 const computerLabel = document.querySelector(".computer-label");
+const choices = document.querySelector(".choices");
+const choiceContainer = document.querySelector(".choice-container");
+const btn = document.createElement("button");
+
+
 
 let playerScore = 0;
 let computerScore = 0;
@@ -119,6 +132,10 @@ scissorsSelector.addEventListener("click", function(e) {
     computerImage.src = `./images/${computerSelection}.png`;
     playerImage.src = "./images/scissors.png";
     playRound(playerSelection, computerSelection);
+});
+
+btn.addEventListener("click", function() {
+    location.reload();
 });
 
 

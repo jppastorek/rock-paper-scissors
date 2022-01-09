@@ -81,6 +81,7 @@ body {
     border-style: solid;
     border-radius: 10px;
     box-shadow: black;
+    cursor: pointer;
 }
 
 .rock>img,
@@ -101,6 +102,18 @@ body {
 
 .computer-winner {
     border-color: #ff6363;
+}
+
+.btn {
+    height: 50px;
+    width: 200px;
+    background-color: #146356;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: #a3da8d;
+    color: #fff1bd;
+    font-size: 24px;
+    cursor: pointer;
 }
 
 
